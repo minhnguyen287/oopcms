@@ -71,7 +71,7 @@
     include('../includes/admin/footer.php')
  ?>
 <!-- Modal add Cat -->
-<div id="addCat" class="modal fade" role="dialog">
+<div id=".table" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
