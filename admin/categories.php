@@ -171,6 +171,7 @@
                         new_option += '<option value="'+i+'" selected = "selected">'+i+'</option>';
                     } else {
                         new_option += '<option value="'+i+'">'+i+'</option>';
+                        console.log(new_option);
                     }                        
                 }// End For loop
                 $('select[name="cat_position"]').append(new_option);
