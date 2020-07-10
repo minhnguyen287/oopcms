@@ -344,3 +344,34 @@ table tr td
 { background: #E5E5DB;
   color: #47433F;
   border-top: 1px solid #FFF;}
+.submenu{
+  display: none;
+  position: absolute;
+    top: 28px;
+    left: -19px;
+}
+.submenu li{
+  display: block;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    width: 10em;
+    background: #5A5A5A  !important;
+    margin: 0 0 1px 0 !important;
+}
+.submenu li:first-child{
+  margin-top: 2px !important;
+}
+li:hover ul.submenu{
+  display: block;
+}
+
+li{
+    position: relative;
+}
+.submenu li a{
+  background: none !important;
+  padding: 0 !important;
+  height: 2.5em !important ;
+  line-height: 2.5em !important;
+}

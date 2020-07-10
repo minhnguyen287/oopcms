@@ -1,4 +1,6 @@
 <?php 
+  include('includes/connection.php');
+  include('includes/function.php');
   include('includes/client/header.php');
   include('includes/client/banner.php');
   include('includes/client/sidebar.php');
