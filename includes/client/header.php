@@ -26,8 +26,25 @@
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li class="selected"><a href="index.php">Home</a></li>
-          <li><a href="#">Categories</a></li>
-          <li><a href="#">Admin Panel</a></li>
+          <li><a href="#">Categories</a>
+            <ul class="submenu">
+              <?php 
+                $query = "SELECT cat_name FROM categories ORDER BY cat_position ASC";
+                $result = $conn -> query($query);
+
+                
+                
+                if ($result -> num_rows > 1) {
+                  while ($row = $result -> fetch_array(MYSQLI_NUM)) {
+                  echo "<li><a href ='#'>".$row[0]."</a></li>";
+                  }
+                }
+                
+               ?>
+            </ul>
+          </li>
+          <li><a href="#">Admin Panel</a>
+          </li>
           <li><a href="#">History</a></li>
           <li><a href="#">Contact Us</a></li>
         </ul>
