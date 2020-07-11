@@ -4,7 +4,7 @@
 		$query = "SELECT COUNT(*) AS count FROM categories";
 		$result = $conn -> query($query);
 		$position = $result -> fetch_array(MYSQLI_ASSOC);
-		echo json_encode($position)
+		echo json_encode($position);
 	}
 	/*============== Function CREATE ================*/
 	if (isset($_POST['action']) && $_POST['action']=='add') {

@@ -30,16 +30,12 @@
             <ul class="submenu">
               <?php 
                 $query = "SELECT cat_name FROM categories ORDER BY cat_position ASC";
-                $result = $conn -> query($query);
-
-                
-                
+                $result = $conn -> query($query);        
                 if ($result -> num_rows > 1) {
                   while ($row = $result -> fetch_array(MYSQLI_NUM)) {
                   echo "<li><a href ='#'>".$row[0]."</a></li>";
                   }
-                }
-                
+                }               
                ?>
             </ul>
           </li>
@@ -51,3 +47,4 @@
       </div>
     </div>
     <div id="content_header"></div>
+      <div id="site_content">
