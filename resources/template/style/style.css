@@ -377,7 +377,6 @@ li{
 }
 
 .single_cat{
-  width: 100%;
   min-width: 800px;
   border: 1px solid #e3e3e3;
   padding: 1em;
@@ -387,5 +386,13 @@ li{
 }
 
 .thumbnail_cat{
-  min-width: 300px;
+  min-width: 35%;
+}
+.description{
+  max-width: 65%;
+  float: left;
+  text-align: justify;
+}
+#site_content{
+  min-height: 50em;
 }
