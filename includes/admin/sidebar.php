@@ -16,16 +16,13 @@
                 <a href="#" class="waves-effect"><i class="ti-user fa-fw"></i>Profile</a>
             </li>
             <li>
-                <a href="categories.php" class="waves-effect"><i class="ti-layout fa-fw"></i>Categories</a>
+                <a href="categories.php" class="waves-effect"><i class="ti-agenda fa-fw"></i>Categories</a>
             </li>
             <li>
-                <a href="#" class="waves-effect"><i class="ti-face-smile fa-fw"></i> Icons</a>
+                <a href="pages.php" class="waves-effect"><i class="ti-files fa-fw"></i>Pages Manager</a>
             </li>
             <li>
                 <a href="#" class="waves-effect"><i class="ti-location-pin fa-fw"></i> Google Map</a>
-            </li>
-            <li>
-                <a href="#" class="waves-effect"><i class="ti-files fa-fw"></i>Pages Manager</a>
             </li>
             <li>
                 <a href="#" class="waves-effect"><i class="ti-info fa-fw"></i> Error 404</a>

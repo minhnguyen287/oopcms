@@ -33,7 +33,7 @@
                 $result = $conn -> query($query);        
                 if ($result -> num_rows > 1) {
                   while ($row = $result -> fetch_array(MYSQLI_NUM)) {
-                  echo "<li><a href ='#'>".$row[0]."</a></li>";
+                  echo "<li><a href ='categories.php'>".$row[0]."</a></li>";
                   }
                 }               
                ?>

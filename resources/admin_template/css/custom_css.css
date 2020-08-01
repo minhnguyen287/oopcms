@@ -11,23 +11,6 @@
 .code-success{
     color: #25c74f;
 }
-.ti-close{
-	color: #ea1940;
-	font-weight: bold;
-	cursor: pointer;
-}
-.ti-close:hover{
-	color: #e85b76;
-	font-weight: bold;
-	cursor: pointer;
-}
-.ti-pencil-alt{
-	color: #1770dc;
-	cursor: pointer;
-}
-.ti-pencil-alt:hover{
-	color: #91baec;
-}
 /*modal del*/
 #delCat{
   font-family: Arial, Helvetica, sans-serif;
