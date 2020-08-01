@@ -375,3 +375,24 @@ li{
   height: 2.5em !important ;
   line-height: 2.5em !important;
 }
+
+.single_cat{
+  min-width: 800px;
+  border: 1px solid #e3e3e3;
+  padding: 1em;
+  border-radius: 1em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.thumbnail_cat{
+  min-width: 35%;
+}
+.description{
+  max-width: 65%;
+  float: left;
+  text-align: justify;
+}
+#site_content{
+  min-height: 50em;
+}

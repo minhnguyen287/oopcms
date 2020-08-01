@@ -8,9 +8,9 @@
             data:{'action':'show_position'},
             success:function(respone){
                 var new_option ='';
-                var limit_posiotion =JSON.parse(respone);
-                for (var i = 1; i <= parseInt(limit_posiotion.count)+1; i++) {
-                    if(i == parseInt(limit_posiotion.count)+1){
+                var limit_position =JSON.parse(respone);
+                for (var i = 1; i <= parseInt(limit_position.count)+1; i++) {
+                    if(i == parseInt(limit_position.count)+1){
                         new_option += '<option value="'+i+'" selected = "selected">'+i+'</option>';
                     } else {
                         new_option += '<option value="'+i+'">'+i+'</option>';

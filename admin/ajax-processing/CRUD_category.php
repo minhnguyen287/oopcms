@@ -4,7 +4,7 @@
 		$query = "SELECT COUNT(*) AS count FROM categories";
 		$result = $conn -> query($query);
 		$position = $result -> fetch_array(MYSQLI_ASSOC);
-		echo json_encode($position)
+		echo json_encode($position);
 	}
 	/*============== Function CREATE ================*/
 	if (isset($_POST['action']) && $_POST['action']=='add') {
@@ -34,7 +34,7 @@
 				echo "sys_error";
 			}
 		}
-	}//END Function CREATE
+	}
 
 	/*============== Function SHOW ================*/
 	if(isset($_POST['action']) && $_POST['action']=='show'){
@@ -50,7 +50,7 @@
 			//echo $show;
 			echo json_encode($data_show);
 		}//END If num_row
-	}// END Function SHOW
+	}
 
 	/*============== Function UPDATE ================*/
 	if (isset($_POST['action']) && $_POST['action'] == 'update') {
@@ -79,7 +79,7 @@
 				echo "sys_error";
 			}
 		}
-	}// END Function UPDATE
+	}
 
 	/*============== Function DELETE ================*/
 	if (isset($_POST['action']) && $_POST['action'] == 'delete'){
