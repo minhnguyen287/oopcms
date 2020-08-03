@@ -80,7 +80,6 @@ $(document).ready(function(){
                 }
             });
 		}
-
 	})
 	 /* ================= END modul Add new category =====================*/   
 
@@ -113,7 +112,6 @@ $(document).ready(function(){
         });
     })
     /*================== End Function Show delete modal =======================*/
-
     function validateInputForm(pname, pcat, ppos){
     	let parttenCharacter = /^[a-zA-z0-9 ]+$/;
     	let parttenNumber = /^\d+$/;
@@ -146,7 +144,6 @@ $(document).ready(function(){
     		return false;
     	}
     }
-
     function restoreNotiForm(){
     	$('.noti-c1').html('');
         $('.noti-c2').html('');
@@ -155,4 +152,3 @@ $(document).ready(function(){
         $('#addcat').attr('data-dismiss','modal');
     }
 });
-
