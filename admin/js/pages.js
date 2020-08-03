@@ -22,15 +22,12 @@ $(document).ready(function(){
 	})
 	/*=========== END Function Show Option when user Click to button add Page =============*/  
 	/*=========== MODUL Add new category =============*/ 
-	$('.add-item').click(function(){
+	$('#addpage').click(function(){
 		var pname = $('input[name="page_name"]').val();
 		var pcat = $('select[name="cat_name"]').val();
 		var ppos = $('select[name="page_position"]').val();
 		var pcontent = $('textarea[name="content"]').val();
-		console.log(pname);
-		console.log(pcat);
-		console.log(ppos);
-		console.log(pcontent);
+		
 
 
 	})
@@ -65,4 +62,8 @@ $(document).ready(function(){
         });
     })
     /*================== End Function Show delete modal =======================*/
+
+    function validateInput(pname, pcat, pcontent, ppos){
+        let name_patern
+    }
 });
