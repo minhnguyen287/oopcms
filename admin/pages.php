@@ -61,8 +61,7 @@
                                                             <i class='ti-pencil-alt'></i> Edit</button></center>
                                                         </td>
                                                         <td>
-                                                            <center><button class='del-item btn btn-danger' data-toggle='modal' data-target='#delPage'>
-                                                            <i class='ti-close'></i> Delete</button></center>
+                                                            <center><button class='del-item btn btn-danger'><i class='ti-close'></i> Delete</button></center>
                                                         </td>
                                                     </tr>";
                                                 }//END While                                            
@@ -81,7 +80,7 @@
 <?php 
     include('../includes/admin/footer.php')
  ?>
-<!-- Modal add Cat -->
+<!-- Modal add Page -->
 <div id="addPage" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -118,7 +117,7 @@
                     </div>
                     <label id='content' class='col-md-12'>Content <span class="noti-c4"></span></label>
                     <div class='col-md-12'>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Please write somethings"></textarea>
+                        <textarea class="form-control" name="content" rows="7" placeholder="Please write somethings"></textarea>
                     </div>
                     <div class='col-sm-12'>
                         <input id="addpage" type = 'button' data-dismiss='modal' class='btn btn-success' value='Creat'>
@@ -129,8 +128,30 @@
     </div>
   </div>
 </div>
+<!-- Modal View Page -->
+<div id="viewPage" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="border-radius:20px">
+      <div class='modal-header'>
+        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+        <h2 class='page-title' name ="edit_title">Lorem Ipsum</h2>
+        <h5 class='author-title' name ="edit_title">Author</h5>
+        <h5 class='date-title' name ="edit_title">02/08/2020</h5>
+      </div>
+        
+        <div class='modal-body'>                
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-<!-- Modal edit Cat -->
+            Why do we use it?
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+            </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal edit Page -->
 <div id="editPage" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -170,7 +191,7 @@
     </div>
   </div>
 </div>
-<!-- Modal delete Cat -->
+<!-- Modal delete Page -->
 <div id="delPage">
   <div class="content">
     <button type='button' class='close'>&times;</button>
