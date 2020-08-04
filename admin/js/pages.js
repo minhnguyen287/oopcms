@@ -21,7 +21,7 @@ $(document).ready(function(){
 		})
 	})
 	/*=========== END Function Show Option when user Click to button add Page =============*/  
-	/*=========== MODUL Add new category =============*/ 
+	/*=========== MODUL Add new page =============*/ 
 	$('#addpage').click(function(){//this is button addpage NOT modal addPage
 		restoreNotiForm();
 		var pname = $('input[name="page_name"]').val();
@@ -81,7 +81,28 @@ $(document).ready(function(){
             });
 		}
 	})
-	 /* ================= END modul Add new category =====================*/   
+	 /* ================= END modul Add new page =====================*/   
+     /*=========== MODUL View new page =============*/ 
+     $('.table').on('click','.show-item',function(){
+        let page_id = $(this).closest('tr').attr('id');
+        $.ajax({
+            type : 'POST',
+            url : 'ajax-processing/CRUD_page.php',
+            data : {
+                'action' : 'show_page',
+                'page_id' : page_id
+            },
+            success:function(respone){
+                //console.log(respone);
+                let page = JSON.parse(respone);
+                $('.page-title').text(page.page_name);
+                $('.author-title').text(page.author);
+                $('.date-title').text(page.post_on);
+                $('div[name="pcontent"]').html(page.content);
+            }
+        })
+     })
+     /*=========== END View new page =============*/ 
 
 	/*================== Function Show delete modal =======================*/
     $('.table').on('click','.del-item',function(){

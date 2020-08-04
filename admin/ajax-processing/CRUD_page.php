@@ -1,5 +1,6 @@
 <?php 
 	include('../../includes/function.php');
+	include('../../includes/connection.php');
 	/*=== Show option in Add-Modal ===*/
 	if (isset($_POST['request']) && $_POST['request']=='show_option') {
 		$query = "SELECT COUNT(*) AS count FROM pages";
@@ -42,6 +43,21 @@
 			} else{
 				echo "sys_error";
 			}
+		}
+	}
+	/*============== Function SHOW ================*/
+	if (isset($_POST['action']) && $_POST['action']=='show_page') {
+		if (isset($_POST['page_id'])&&filter_var($_POST['page_id'],FILTER_VALIDATE_INT)) {
+			$page_id = $_POST['page_id'];
+		}
+		$query = "SELECT page_name, content, post_on, u.username AS author FROM pages AS p JOIN users AS u USING (user_id) WHERE page_id = {$page_id}";
+		$page = $conn -> query($query);
+
+		if ($page -> num_rows < 1) {
+			echo "Opps, sorry somethings were wrong !";
+		} else {
+			$result = $page -> fetch_array(MYSQLI_ASSOC);
+			echo json_encode($result);
 		}
 	}
 ?>
