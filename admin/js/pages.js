@@ -114,10 +114,32 @@ $(document).ready(function(){
                 'page_id' : page_id
             },
             success:function(respone){
-                console.log(respone);
+                //console.log(respone);
                 let load_Edata = JSON.parse(respone);
+                console.log(load_Edata);
+                // Load data cho input và textarea
                 $('input[name="Epage_name"]').val(load_Edata.page_name);
                 $('textarea[name="Econtent"]').val(load_Edata.content);
+                //Load data cho các thẻ select
+                let cat_option = '';
+                let pos_option = '';
+                for (var i = 0; i < parseInt(load_Edata.count); i++) {//Phần category option
+                	if (parseInt(load_Edata[i].cat_id) == parseInt(load_Edata.cat_id)) {
+                		cat_option += '<option value="'+load_Edata[i].cat_id+'" selected = "selected">'+load_Edata[i].cat_name+'</option>';
+                	} else {
+                		cat_option += '<option value="'+load_Edata[i].cat_id+'">'+load_Edata[i].cat_name+'</option>';
+                	}
+                }//End for loop
+                $('select[name="Ecat_name"]').html(cat_option);
+                //Phần posiotion option
+                for (var i = 1; i <= parseInt(load_Edata.count); i++) {
+                	if (i == parseInt(load_Edata.page_position)) {
+                		pos_option += '<option value="'+i+'" selected = "selected">'+i+'</option>';
+                	} else {
+                		pos_option += '<option value="'+i+'">'+i+'</option>';
+                	}
+                }// End for loop
+                $('select[name="Epage_position"]').html(pos_option);               
             }
         })
     })

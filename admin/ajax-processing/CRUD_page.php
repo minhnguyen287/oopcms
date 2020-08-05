@@ -62,13 +62,27 @@
 	}
 	/*============== Function UPDATE ================*/
 	if (isset($_POST['action'])&& $_POST['action']=='load_page') {
+		// Lấy page_id được gửi từ ajax
 		$page_id = isNum($_POST['page_id']);
+		//Thực hiện truy vấn lấy ra thông tin page theo page id ở trên 
 		$row = get_A_row('pages','page_id',$page_id);
-		$result = $row -> fetch_array(MYSQLI_ASSOC);
-		$result1 = $conn -> query("SELECT cat_id, cat_name FROM categories");
-		while ($cat_option = $result1 -> fetch_array(MYSQLI_ASSOC)) {
-			
+		// Fetch kết quả thành 1 array, tạm gọi là array 1; 
+		$result1 = $row -> fetch_array(MYSQLI_ASSOC);
+
+		// Truy vấn ra cat_id và category name để làm phần option category cho form update
+		$cat = $conn -> query("SELECT cat_id, cat_name FROM categories");
+		//Tạo ra 1 array lưu kết quả, tạm gọi là array 2a
+		$result2a = array();
+		// Lần lượt lưu kết quả thông qua vòng while
+		while ($cat_option = $cat -> fetch_array(MYSQLI_ASSOC)) {
+			$result2a[] = $cat_option;
 		}
+		//Truy vấn ra tổng số category
+		$all_cat = $conn -> query("SELECT COUNT(*) AS count FROM categories");
+		$result2b = $all_cat -> fetch_array(MYSQLI_ASSOC);
+
+		//Tiến hành merge array để có thể build lại một modal hoàn chỉnh
+		$result = array_merge($result1,$result2a,$result2b);
 		echo json_encode($result);
 
 	}
