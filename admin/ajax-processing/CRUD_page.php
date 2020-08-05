@@ -60,4 +60,16 @@
 			echo json_encode($result);
 		}
 	}
+	/*============== Function UPDATE ================*/
+	if (isset($_POST['action'])&& $_POST['action']=='load_page') {
+		$page_id = isNum($_POST['page_id']);
+		$row = get_A_row('pages','page_id',$page_id);
+		$result = $row -> fetch_array(MYSQLI_ASSOC);
+		$result1 = $conn -> query("SELECT cat_id, cat_name FROM categories");
+		while ($cat_option = $result1 -> fetch_array(MYSQLI_ASSOC)) {
+			
+		}
+		echo json_encode($result);
+
+	}
 ?>

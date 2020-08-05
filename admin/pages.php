@@ -96,11 +96,11 @@
                 <div class='form-group'>
                     <label id='pn' class='col-md-12'>Page name <span class="noti-c1"></span></label>
                     <div class='col-md-12'>
-                        <input type='text' name='page_name' class='form-control form-control-line' placeholder="Please enter a Page name"> 
+                        <input type='text' name='Apage_name' class='form-control form-control-line' placeholder="Please enter a Page name"> 
                     </div>                
                     <label id='cat' class='col-md-12'>Category <span class="noti-c2"></span></label>
                     <div class='col-md-12'>
-                        <select name='cat_name' class='form-control form-control-line'>
+                        <select name='Acat_name' class='form-control form-control-line'>
                             <?php
                                 $query = "SELECT cat_id, cat_name FROM categories";
                                 $result = $conn -> query($query);
@@ -112,12 +112,12 @@
                     </div>               
                     <label id='pos' class='col-md-12'>Position <span class="noti-c3"></span></label>
                     <div class='col-md-12'>
-                        <select name='page_position' class='form-control form-control-line'>
+                        <select name='Apage_position' class='form-control form-control-line'>
                         </select>                                          
                     </div>
                     <label id='content' class='col-md-12'>Content <span class="noti-c4"></span></label>
                     <div class='col-md-12'>
-                        <textarea class="form-control" name="content" rows="7" placeholder="Please write somethings"></textarea>
+                        <textarea class="form-control" name="Acontent" rows="7" placeholder="Please write somethings"></textarea>
                     </div>
                     <div class='col-sm-12'>
                         <input id="addpage" type = 'button' data-dismiss='modal' class='btn btn-success' value='Creat'>
@@ -162,20 +162,20 @@
                 <div class='form-group'>
                     <label id='pn' class='col-md-12'>Page name <span class="noti-c1"></span></label>
                     <div class='col-md-12'>
-                        <input type='text' name='page_name' class='form-control form-control-line' placeholder="Please enter a Page name"> 
+                        <input type='text' name='Epage_name' class='form-control form-control-line' placeholder="Please enter a Page name"> 
                     </div>                
                     <label id='cat' class='col-md-12'>Category <span class="noti-c2"></span></label>
                     <div class='col-md-12'>
-                        <select name='cat_name' class='form-control form-control-line'></select>                                          
+                        <select name='Ecat_name' class='form-control form-control-line'></select>                                          
                     </div>               
                     <label id='pos' class='col-md-12'>Position <span class="noti-c3"></span></label>
                     <div class='col-md-12'>
-                        <select name='page_position' class='form-control form-control-line'>
+                        <select name='Epage_position' class='form-control form-control-line'>
                         </select>                                          
                     </div>
                     <label id='content' class='col-md-12'>Content <span class="noti-c4"></span></label>
                     <div class='col-md-12'>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Please write somethings"></textarea>
+                        <textarea class="form-control" name="Econtent" rows="7" placeholder="Please write somethings"></textarea>
                     </div>
                     <div class='col-sm-12'>
                         <input id="editcat" type = 'button' data-dismiss='modal' class='btn btn-warning' value='Update'>

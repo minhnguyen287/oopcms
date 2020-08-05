@@ -16,7 +16,7 @@ $(document).ready(function(){
                         add_option += '<option value="'+i+'">'+i+'</option>';
                     }                        
                 }// End For loop
-                $('select[name="page_position"]').html(add_option);
+                $('select[name="Apage_position"]').html(add_option);
 			}
 		})
 	})
@@ -24,10 +24,10 @@ $(document).ready(function(){
 	/*=========== MODUL Add new page =============*/ 
 	$('#addpage').click(function(){//this is button addpage NOT modal addPage
 		restoreNotiForm();
-		var pname = $('input[name="page_name"]').val();
-		var pcat = $('select[name="cat_name"]').val();
-		var ppos = $('select[name="page_position"]').val();
-		var pcontent = $('textarea[name="content"]').val();
+		var pname = $('input[name="Apage_name"]').val();
+		var pcat = $('select[name="Acat_name"]').val();
+		var ppos = $('select[name="Apage_position"]').val();
+		var pcontent = $('textarea[name="Acontent"]').val();
 		if(!validateInputForm(pname, pcat, ppos)){
 			console.log('Input data is not correct');
 		} else {
@@ -75,14 +75,14 @@ $(document).ready(function(){
                             }                        
                         }//END For loop
                         //console.log(new_position);
-                        $('select[name="page_position"]').html(new_position);
+                        $('select[name="Apage_position"]').html(new_position);
                     }
                 }
             });
 		}
 	})
 	 /* ================= END modul Add new page =====================*/   
-     /*=========== MODUL View new page =============*/ 
+     /*=========== MODUL modul View new page =============*/ 
      $('.table').on('click','.show-item',function(){
         let page_id = $(this).closest('tr').attr('id');
         $.ajax({
@@ -102,7 +102,26 @@ $(document).ready(function(){
             }
         })
      })
-     /*=========== END View new page =============*/ 
+     /*=========== END modul View new page =============*/ 
+    /*=========== MODUL modul Update new page =============*/ 
+    $('.table').on('click','.edit-item',function(){
+        let page_id = $(this).closest('tr').attr('id');
+        $.ajax({
+            type : 'POST',
+            url : 'ajax-processing/CRUD_page.php',
+            data : {
+                'action' : 'load_page',
+                'page_id' : page_id
+            },
+            success:function(respone){
+                console.log(respone);
+                let load_Edata = JSON.parse(respone);
+                $('input[name="Epage_name"]').val(load_Edata.page_name);
+                $('textarea[name="Econtent"]').val(load_Edata.content);
+            }
+        })
+    })
+
 
 	/*================== Function Show delete modal =======================*/
     $('.table').on('click','.del-item',function(){
