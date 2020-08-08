@@ -102,8 +102,9 @@ $(document).ready(function(){
             }
         })
      })
-     /*=========== END modul View new page =============*/ 
-    /*=========== MODUL modul Update new page =============*/ 
+     /*=========== END modul View page =============*/ 
+    /*=========== MODUL modul Update page =============*/ 
+    /* PART 1 - LOAD DATA*/
     $('.table').on('click','.edit-item',function(){
         let page_id = $(this).closest('tr').attr('id');
         $.ajax({
@@ -143,7 +144,31 @@ $(document).ready(function(){
             }
         })
     })
+    /* PART 2 - PROCESS UPDATE*/
+    $('#editcat').click(function(){
+    	var pname = $('input[name="Epage_name"]').val();
+		var pcat = $('select[name="Ecat_name"]').val();
+		var ppos = $('select[name="Epage_position"]').val();
+		var pcontent = $('textarea[name="Econtent"]').val();
+		if(!validateInputForm(pname, pcat, ppos)){
+			console.log('Input data is not correct');
+		} else {
+			$.ajax({
+				type : 'POST',
+				url : 'ajax-processing/CRUD_page.php';
+				data : {
+					'action' : 'update_page'
+					'pname' : pname,
+					'pcat' : pcat,
+					'ppos' : ppos,
+					'pcontent' : pcontent
+				},
+				success:function(respone){
 
+				}
+			})
+		}
+    })
 
 	/*================== Function Show delete modal =======================*/
     $('.table').on('click','.del-item',function(){

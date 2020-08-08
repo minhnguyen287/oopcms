@@ -60,7 +60,7 @@
 			echo json_encode($result);
 		}
 	}
-	/*============== Function UPDATE ================*/
+	/*============== Function UPDATE _ PART 1 :LOAD DATA ================*/
 	if (isset($_POST['action'])&& $_POST['action']=='load_page') {
 		// Lấy page_id được gửi từ ajax
 		$page_id = isNum($_POST['page_id']);
@@ -84,6 +84,12 @@
 		//Tiến hành merge array để có thể build lại một modal hoàn chỉnh
 		$result = array_merge($result1,$result2a,$result2b);
 		echo json_encode($result);
-
+	}
+	/*============== Function UPDATE _ PART 2 : UPDAE PAGE ================*/
+	if (isset($_POST'action') && $_POST['action'] == 'update_page') {
+		$page_name = isCharacter($_POST['pname']);
+		$cat_id = isNum($_POST['pcat']);
+		$page_position = isNum($_POST['ppos']);
+		$content = $_POST['pcontent'];
 	}
 ?>
