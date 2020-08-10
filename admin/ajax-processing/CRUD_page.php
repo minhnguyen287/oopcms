@@ -86,10 +86,23 @@
 		echo json_encode($result);
 	}
 	/*============== Function UPDATE _ PART 2 : UPDAE PAGE ================*/
-	if (isset($_POST'action') && $_POST['action'] == 'update_page') {
+	if (isset($_POST['action']) && $_POST['action'] == 'update_page') {
+		$page_id = isNum($_POST['page_id']);
 		$page_name = isCharacter($_POST['pname']);
 		$cat_id = isNum($_POST['pcat']);
 		$page_position = isNum($_POST['ppos']);
 		$content = $_POST['pcontent'];
+		$query = "UPDATE pages SET page_name = ?,cat_id = ?, content = ?, page_position = ? WHERE page_id = ? LIMIT 1";
+		$stmt = $conn -> prepare($query);
+		$stmt -> bind_param('sisii',$page_name,$cat_id,$content,$page_position,$page_id);
+		$stmt -> execute();
+		if($conn -> affechted_row = 1){
+			$row = get_A_row('pages','page_id',$page_id);
+			$result = $row -> fetch_array(MYSQLI_ASSOC);
+			array_push($result, "Page was edited succesfully") ;
+			echo json_encode($result);
+		} else{
+			echo "sys_error";
+		}
 	}
 ?>

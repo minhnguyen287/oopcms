@@ -140,32 +140,39 @@ $(document).ready(function(){
                 		pos_option += '<option value="'+i+'">'+i+'</option>';
                 	}
                 }// End for loop
+                $('#editcat').attr('pid',load_Edata.page_id);
                 $('select[name="Epage_position"]').html(pos_option);               
             }
         })
     })
     /* PART 2 - PROCESS UPDATE*/
     $('#editcat').click(function(){
-    	var pname = $('input[name="Epage_name"]').val();
-		var pcat = $('select[name="Ecat_name"]').val();
-		var ppos = $('select[name="Epage_position"]').val();
-		var pcontent = $('textarea[name="Econtent"]').val();
+        let pid = $(this).attr('pid');
+    	let pname = $('input[name="Epage_name"]').val();
+		let pcat = $('select[name="Ecat_name"]').val();
+		let ppos = $('select[name="Epage_position"]').val();
+		let pcontent = $('textarea[name="Econtent"]').val();
 		if(!validateInputForm(pname, pcat, ppos)){
 			console.log('Input data is not correct');
 		} else {
 			$.ajax({
 				type : 'POST',
-				url : 'ajax-processing/CRUD_page.php';
+				url : 'ajax-processing/CRUD_page.php',
 				data : {
-					'action' : 'update_page'
+					'action' : 'update_page',
+                    'page_id' : pid,
 					'pname' : pname,
 					'pcat' : pcat,
 					'ppos' : ppos,
 					'pcontent' : pcontent
 				},
 				success:function(respone){
-
-				}
+                    let update_row ='';
+                    if (respone != 'sys_error') {
+                        Udata = JSON.parse(respone);
+                        update_row += ""
+                    }
+                }
 			})
 		}
     })

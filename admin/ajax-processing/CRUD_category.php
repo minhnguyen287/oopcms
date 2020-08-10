@@ -63,9 +63,7 @@
 		if (isset($_POST['Ecat_position'])) {
 			$Ecat_position = isNum($_POST['Ecat_position']);
 		}
-		if (isExists('categories','cat_name',$Ecat_name)) {
-			echo "exists";
-		} else {
+		
 			$query = "UPDATE categories SET cat_name = ?, cat_position = ? WHERE cat_id = ? LIMIT 1";
 			$stmt = $conn -> prepare($query);
 			$stmt -> bind_param("sii",$Ecat_name,$Ecat_position,$Ecat_id);
@@ -78,7 +76,7 @@
 			} else{
 				echo "sys_error";
 			}
-		}
+		
 	}
 
 	/*============== Function DELETE ================*/
