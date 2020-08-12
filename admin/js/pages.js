@@ -167,10 +167,21 @@ $(document).ready(function(){
 					'pcontent' : pcontent
 				},
 				success:function(respone){
-                    let update_row ='';
-                    if (respone != 'sys_error') {
-                        Udata = JSON.parse(respone);
-                        update_row += ""
+                    if (respone != 'sys_error'){
+                    	let update_row ="";
+                        let Udata = JSON.parse(respone);
+                        update_row += "<td>"+Udata.page_name+"</td>";
+                        update_row += "<td>"+Udata.cat_id+"</td>";
+                        update_row += "<td>"+Udata.user_id+"</td>";
+                        update_row += "<td>"+Udata.post_on+"</td>";
+                        update_row += "<td>"+Udata.page_position+"</td>";
+                        update_row += "<td><center><button class='show-item btn btn-info' data-toggle='modal' data-target='#viewPage'><i class='ti-eye'></i> View</button></center></td>";
+                        update_row += "<td><center><button class='edit-item btn btn-primary' data-toggle='modal' data-target='#editPage'><i class='ti-pencil-alt'></i> Edit</button></center></td>";
+                        update_row += "<td><center><button class='del-item btn btn-danger'><i class='ti-close'></i> Delete</button></center></td>";
+                        $('tr[id="'+Udata.page_id+'"]').html(update_row);
+                        $('.text-muted').html('<code class="code-success">Page was edited successfully</code>');
+                    } else {
+                    	$('.text-muted').html('<code class="code">Page was not edited</code>');
                     }
                 }
 			})
